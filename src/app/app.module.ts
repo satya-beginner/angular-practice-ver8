@@ -3,7 +3,7 @@ import { BrowserModule }  from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-
+import { SearchPipe } from './search.pipe';
 
 @NgModule({
   imports: [
@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
   ],
   declarations: [
     AppComponent,
+    SearchPipe
 
   ],
   bootstrap: [ AppComponent ]
