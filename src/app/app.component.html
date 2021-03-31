@@ -1,1 +1,28 @@
-Hello World
+<h1>Custom Tree</h1>
+
+<span *ngIf="popupData">
+  {{popupData['children']['option_type']}} :
+
+  <span (click)="level0Action()">{{popupData['children']['name']}}</span>
+  <span *ngIf="selectedLevel1Record"> - {{selectedLevel1Record['name']}} </span>
+  
+  <!-- Level 1 -->
+  <span *ngFor="let level1 of popupData ['children']['children']">
+    <span class="" (click)="level1Action(level1, showLevel_2_Tree)">
+      <br />
+      <span [ngClass]="testClass(level1['name'])">
+        L1 - {{level1['name']}} -- {{testClass(level1['name'])}}
+      </span>
+    </span>
+
+    <span *ngIf="level1['children'] && showLevel_2_Tree == true">
+      <span class="level2">
+        <span *ngFor="let level2 of level1 ['children']">
+          <span *ngIf="level2['children'] && level3 == true"> </span>
+        </span>
+      </span>
+    </span>
+  </span>
+</span>
+
+<hr />
